@@ -83,6 +83,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system" title=""/>
+                                <connections>
+                                    <action selector="addNoteButton:" destination="haC-4G-3Ru" eventType="touchUpInside" id="NVh-KV-KkT"/>
+                                </connections>
                             </button>
                             <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ETC-f0-Onk">
                                 <rect key="frame" x="0.0" y="142" width="393" height="44"/>
@@ -97,7 +100,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="3pb-Mf-Ybg"/>
-                    <navigationItem key="navigationItem" id="oIV-0D-BdL"/>
+                    <navigationItem key="navigationItem" title="To Do " id="oIV-0D-BdL"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yMB-84-bRv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,6 +7,9 @@
 
 #import "ViewController.h"
 #import "Notes.h"
+#import "DetailsViewController.h"
+#import "InprogressViewController.h"
+#import "DoneViewController.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -37,6 +40,10 @@
 - (void)viewWillAppear:(BOOL)animated{
     [self retriveUserDefaults];
 }
+- (IBAction)addNoteButton:(id)sender {
+    DetailsViewController *detailsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailsViewController"];
+    [self.navigationController pushViewController:detailsVC animated:true];
+}
 
 -(void)retriveUserDefaults{
     NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:@"notesData"];
@@ -53,15 +60,24 @@
     printf("%lu",(unsigned long)_arrayOfNotes.count);
 }
 
-- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath { 
+
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    Notes *note;
-    note = self.arrayOfNotes[indexPath.row];
+    Notes *note = self.isSearching ? self.filteredNotes[indexPath.row] : self.arrayOfNotes[indexPath.row];
+    
     cell.textLabel.text = note.title;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld", (long)note.priority];
+    
     return cell;
 }
 
-
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.arrayOfNotes removeObjectAtIndex:indexPath.row];
+        [self saveNotesToDefaults];
+        [self.toDoTableView reloadData];
+    }
+}
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _arrayOfNotes.count;
