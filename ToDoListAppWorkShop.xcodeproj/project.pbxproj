@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00B5B6322C6B674300997ADB /* Notes.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5B6312C6B674300997ADB /* Notes.m */; };
 		00D263FF2C6A98A400A3546A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D263FE2C6A98A400A3546A /* AppDelegate.m */; };
 		00D264022C6A98A400A3546A /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D264012C6A98A400A3546A /* SceneDelegate.m */; };
 		00D264052C6A98A400A3546A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D264042C6A98A400A3546A /* ViewController.m */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00B5B6302C6B674300997ADB /* Notes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Notes.h; sourceTree = "<group>"; };
+		00B5B6312C6B674300997ADB /* Notes.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Notes.m; sourceTree = "<group>"; };
 		00D263FA2C6A98A400A3546A /* ToDoListAppWorkShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoListAppWorkShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00D263FD2C6A98A400A3546A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		00D263FE2C6A98A400A3546A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -115,6 +118,8 @@
 				00D2640B2C6A98A700A3546A /* LaunchScreen.storyboard */,
 				00D2640E2C6A98A700A3546A /* Info.plist */,
 				00D2640F2C6A98A700A3546A /* main.m */,
+				00B5B6302C6B674300997ADB /* Notes.h */,
+				00B5B6312C6B674300997ADB /* Notes.m */,
 			);
 			path = ToDoListAppWorkShop;
 			sourceTree = "<group>";
@@ -267,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00D264052C6A98A400A3546A /* ViewController.m in Sources */,
+				00B5B6322C6B674300997ADB /* Notes.m in Sources */,
 				00D263FF2C6A98A400A3546A /* AppDelegate.m in Sources */,
 				00D264102C6A98A700A3546A /* main.m in Sources */,
 				00D264022C6A98A400A3546A /* SceneDelegate.m in Sources */,
